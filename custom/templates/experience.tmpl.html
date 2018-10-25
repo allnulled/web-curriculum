@@ -1,0 +1,40 @@
+<div class="cv-experience-page" ng-controller="ExperienceController as $experience">
+	<h1>{{ "Experiencia" | translate }}</h1>
+	<div class="legend">
+			<div class="legend-point">
+				<div class="legend-color blue"></div>
+				<div class="legend-text">Front-end</div>
+			</div>
+			<div class="legend-point">
+				<div class="legend-color red"></div>
+				<div class="legend-text">Back-end</div>
+			</div>
+			<div class="legend-point">
+				<div class="legend-color black"></div>
+				<div class="legend-text">Others</div>
+			</div>
+	</div>
+	<ul>
+		<li ng-repeat="(index, currentExperience) in $experience.experiences">
+			<div class="card">
+				<h4 class="card-header" style="margin:0">{{ currentExperience.company | translate }}</h4>
+				<div class="card-body t-100">
+					<div class="c-top w-50">
+						<div class="card-body" style="text-align:right;">
+							<div class="cside">{{ currentExperience.technologies.client | translate }}</div>
+							<div class="sside">{{ currentExperience.technologies.server | translate }}</div>
+							<div class="wside">{{ currentExperience.technologies.others | translate }}</div>
+						</div>
+					</div>
+					<div class="c-top w-50">
+						<div class="card-body">
+							<div class="cside">{{ currentExperience.tasks.client | translate }}</div>
+							<div class="sside">{{ currentExperience.tasks.server | translate }}</div>
+							<div class="wside">{{ currentExperience.tasks.others | translate }}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>

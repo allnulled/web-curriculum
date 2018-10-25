@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Curriculum web</title>
+	<base href="/">
+	<script type="text/javascript">
+///////////////
+///////////////
+///////////////
+///////////////
+//INTERSITIAL
+///////////////
+///////////////
+///////////////
+(function() {
+		window.addEventListener("load", function() {
+				const intersitial = document.querySelector(".cv-intersitial");
+				intersitial.addEventListener("click", () => intersitial.remove());
+				setTimeout(() => intersitial.style.opacity = "0", 4500);
+				setTimeout(() => intersitial.remove(), 8700);
+		});
+})();
+///////////////
+///////////////
+///////////////
+//INTERSITIAL script ends here...
+///////////////
+///////////////
+///////////////
+	</script>
+	<script src="ext/dat.gui.min.js"></script>
+	<link  href="ext/dat.gui.css" rel="stylesheet" type="text/css" />
+	<script src="ext/jquery.min.js"></script>
+	<script src="ext/bootstrap.min.js"></script>
+	<link  href="ext/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<script src="ext/angular.min.js"></script>
+	
+	<script src="ext/module.simple-nav-menu.js"></script>
+	<link  href="ext/module.simple-nav-menu.css" rel="stylesheet" type="text/css" />
+	
+	<script src="ext/selectize.standalone.min.js"></script>
+	<link  href="ext/selectize.css" rel="stylesheet" type="text/css" />
+	
+	<script src="ext/angular.selectize2.js"></script>
+	
+	<script src="ext/angular-translate.min.js"></script>
+	<script src="ext/angular-animate.min.js"></script>
+	<script src="ext/angular-route.min.js"></script>
+	<script src="ext/angular-sanitize.min.js"></script>
+	<script src="ext/slick.min.js"></script>
+	<link  href="ext/slick.css" rel="stylesheet" type="text/css" />
+	<link  href="ext/slick-theme.css" rel="stylesheet" type="text/css" />
+	<script src="ext/angular-slick.min.js"></script>
+	
+	<script src="custom/modules/cv-app.module.js"></script>
+	<script src="custom/configurations/translations.js"></script>
+	<script src="custom/configurations/routes.js"></script>
+	<script src="custom/controllers/cv-main.controller.js"></script>
+	<script src="custom/controllers/translator.controller.js"></script>
+	<script src="custom/controllers/navigation-button.controller.js"></script>
+	<script src="custom/controllers/home.controller.js"></script>
+	<script src="custom/controllers/experience.controller.js"></script>
+	
+	<script src="custom/scripts/app.js"></script>
+	<link  href="custom/styles/app.css" rel="stylesheet" type="text/css" />
+	<link rel="shortcut icon" href="favicon.ico">
+</head>
+<body class="cv-context">
+	<div style="" class="cv-intersitial">
+		<div class="t-100">
+			<div class="c text-center cv-intersitial-box">
+				<div class="cv-intersitial-text">
+					<span></span>
+					<script type="text/javascript">
+						window.addEventListener("load", function() {
+							const intersitialText = document.querySelector(".cv-intersitial-text");
+							if(navigator.language.toLowerCase().indexOf("ca") === 0) {
+								intersitialText.querySelector("span").innerHTML = "...El buit és...";
+							} else if(navigator.language.toLowerCase().indexOf("es") === 0) {
+								intersitialText.querySelector("span").innerHTML = "...El vacío es...";
+							} else {
+								intersitialText.querySelector("span").innerHTML = "...Emptiness is...";
+							}
+							intersitialText.className += " appearing";
+						});
+					</script>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="cv container" ng-app="CVApp" ng-cloak>
+		<div class="cv-wrapped" ng-controller="CVMainController as $main">
+		<header class="row cv-header">
+			<div class="col-12 cv-header-col">
+				<table>
+					<tr>
+						<td>
+							<div class="nav-button">
+								<div class="nav-icon" ng-click="$main.navigation.toggleState()" ng-class="{crossed:$main.navigation.state==='opened'}">
+								</div>
+							</div>
+						</td>
+						<td style="width:100%;text-align:right;font-size:10px;">
+							{{ "Idioma" | translate }}:
+						</td>
+						<td style="vertical-align: middle;">
+							<div class="cv-languages" ng-controller="TranslatorController as $translator">
+								<selectize
+									class="cv-languages-selector"
+									ng-model="$main.language"
+									ng-change="$main.translator.use($main.language)"
+									options="$translator.options"
+									config="$translator.config">
+								</selectize>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</header>
+		<article class="row">
+			<div class="cv-navigation nav-menu--inner--api nav-menu col-sm-3" ng-class="{activated:$main.navigation.state==='opened'}">
+				<a href="/" class="nav-item cv-navigable d-block" ng-click="$main.navigation.setPage('home')" ng-class="{'selected-page': $main.navigation.page === 'home'}">{{ "Inicio" | translate }}</a>
+				<a href="/code" class="nav-item cv-navigable d-block" ng-click="$main.navigation.setPage('code')" ng-class="{'selected-page': $main.navigation.page === 'code'}">{{ "Código libre" | translate }}</a>
+				<a href="/experience" class="nav-item cv-navigable d-block" ng-click="$main.navigation.setPage('experience')" ng-class="{'selected-page': $main.navigation.page === 'experience'}">{{ "Experiencia" | translate }}</a>
+				<a href="/goals" class="nav-item cv-navigable d-block" ng-click="$main.navigation.setPage('goals')" ng-class="{'selected-page': $main.navigation.page === 'goals'}">{{ "Objetivos" | translate }}</a>
+				<a href="/contact" class="nav-item cv-navigable d-block" ng-click="$main.navigation.setPage('contact')" ng-class="{'selected-page': $main.navigation.page === 'contact'}">{{ "Contacto" | translate }}</a>
+			</div>
+			<div class="col-12 col-sm-9 cv-page">
+				<div ng-view></div>
+			</div>
+		</article>
+		<footer class="row">
+			<div class="col-12" style="font-size: 9px; text-align: right; border-top: 1px solid #e0e0e0; margin-top: 5px;">{{ "Desarrollado con" | translate }} <img src="resources/heart-icon.png" style="display: inline-block; height: 12px;" /> {{ "por un desarrollador web apasionado." | translate }}</div>
+		</footer>
+	</div>
+</div>
+</body>
+</html>

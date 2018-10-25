@@ -1,0 +1,27 @@
+<div ng-controller="HomeController as $home">
+	<h1>{{ "Gracias" | translate }}</h1>
+	<div>{{ "Gracias por pasarte." | translate}}</div>
+	<div>{{ "Soy un desarrollador web." | translate }}</div>
+	<div>{{ "Esto es un carrusel con imágenes y texto en el que me presento." | translate}}</div>
+	<div>
+		<slick settings="$home.carousel.config" ng-if="$home.carousel.running">
+			<div
+				class="carousel-item"
+				ng-repeat="($carouselIndex, $item) in $home.carousel.items"
+				style="position: relative; height: 200px;">
+				<div style="height: 100%">
+					<div class="carousel-image-box" style="position: absolute; top: 0; left: 0; right: 0; text-align: center;">
+						<img class="carousel-image" style="display: inline-block; height: 200px;" ng-src="{{$item.image}}" />
+					</div>
+					<div class="t-100">
+						<div class="c carousel-text carousel-text-{{$carouselIndex}}"
+						style="position: relative; color: white; text-align: center; font-weight: bold; font-size: 16px; text-shadow: 0 0 1px black;">{{ $item.text }}</div>
+					</div>
+				</div>
+			</div>
+		</slick>
+	</div>
+	<div>
+		{{ "Te invito a navegar por otras pestañas del menú y averiguar más sobre mí." | translate }}
+	</div>
+</div>

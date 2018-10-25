@@ -1,0 +1,429 @@
+.nav-menu--inner--api {
+	width: 150px;
+	margin-left: -152px;
+}
+.nav-menu--inner--api.activated {
+	
+}
+
+body {
+	min-height: 250px;
+}
+
+* {
+	/*border: 1px dotted #303030;*/
+}
+
+header, main, aside, footer {
+	display: block;
+}
+
+.language-option {
+	width: 100%;
+}
+
+.language-option-icon-cell {
+	width: auto;
+	vertical-align: middle;
+}
+
+.language-option-label-cell {
+	width: 100%;
+	vertical-align: middle;
+}
+
+.language-option-icon {
+	width: 25px;
+}
+
+.cv-languages-selector {
+	z-index: 1000;
+	width: 85px;
+}
+.cv-languages-selector > .selectize-input {
+	padding: 1px;
+	vertical-align: middle;
+}
+
+.cv-page {
+	display: block;
+}
+
+.nav-icon {
+	width: 50px;
+	height: 50px;
+	border-radius: 3pt;
+	padding: 5px;
+	background-color: white;
+	border: 1px solid #F0F0F0;
+	background-image: url("../../resources/burger-icon.png");
+	background-size: 100%;
+	cursor: pointer;
+	transition: background-color .2s linear, box-shadow .2s linear;
+}
+
+.nav-icon.crossed {
+	background-image: url("../../resources/cross-icon.png");
+	background-size: 100%;
+}
+.nav-icon:hover {
+	background-color: white;
+	box-shadow: 1px 1px 2px black;
+}
+
+.cv-intersitial {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 999999;
+	border: 2px solid #333;
+}
+
+.t-100 {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+.c {
+	display: table-cell;
+	vertical-align: middle;
+}
+.c-top {
+	display: table-cell;
+	vertical-align: top;
+}
+.cv-intersitial-box {
+	
+}
+
+.cv-intersitial-text {
+	color: black;
+	text-shadow: 0 0 1px #333;
+	opacity: 0;
+	transition: opacity 2s linear;
+}
+
+.cv-intersitial-text.appearing {
+	opacity: 1;
+}
+
+.carousel-item {
+	display: block;
+}
+
+
+.slick-arrow {
+	
+}
+.slick-prev {
+	
+}
+.slick-next {
+
+}
+
+.slick-list {
+
+}
+
+.slick-dots {
+
+}
+
+.slick-dots > li {
+
+}
+
+.slick-buttons {
+
+}
+
+.slick-prev:before, .slick-next:before {
+	color: blue;
+}
+
+.cv-navigable {
+	border-top: 1px solid #EFEFEF;
+	padding: 5px;
+	padding-right: 12px;
+	background-color: #FFFFFF;
+	/* text-transform: uppercase; */
+	text-align: right;
+	cursor: pointer;
+}
+.cv-navigable:first-child {
+	border-top: 0px solid #EFEFEF;
+}
+.cv-navigable:hover {
+	background-color: #F9F9F9;
+}
+.carousel-image {
+	border-radius: 4pt;
+}
+.cv-navigable.selected-page {
+	background-color: #F8F8F8;
+}
+
+@media (max-width: 567px) {
+	.nav-menu--inner--api {
+		position: absolute;
+	}
+	.nav-menu--inner--api.activated {
+
+	}
+	.cv-navigation {
+		z-index: 1000;
+	}
+	.cv-navigable {
+		border: 1px solid #E0E0E0;
+		border-top: 0px solid #E0E0E0;
+	}
+	.cv-navigable:first-child {
+		border: 1px solid #E0E0E0;
+		border-top: 0px solid #E0E0E0;
+	}
+	.legend-text {
+		font-size: 10px;
+	}
+}
+@media (min-width: 567px) {
+	.nav-menu--inner--api {
+		display: block;
+		position: relative;
+		margin-left: 0;
+	}
+	.nav-menu--inner--api.activated {
+		display: block;
+		position: relative;
+		margin-left: 0;
+	}
+	.nav-button {
+		display: none;
+	}
+}
+
+.cv-header {
+	border-bottom: 1px solid #e0e0e0;
+	background-color: #f8f8f8;
+	padding-bottom: 6px;
+}
+
+.cv-header-col {
+	margin-top: 8px;
+}
+
+.selectize-input > .item {
+	font-size: 10px;
+	padding: 1px;
+}
+
+.cside {
+	color: #000058;
+	/*text-shadow: 0 0 1px blue;*/
+}
+.sside {
+	color: #8F0000;
+	/*text-shadow: 0 0 1px red;*/
+}
+.wside {
+	color: #000000;
+	/*text-shadow: 0 0 1px black;*/
+}
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.cv-experience-page .card {
+	margin: 4px;
+}
+.cv-experience-page .card-body {
+	padding: 4px;
+	font-size: 10px;
+}
+.cv-experience-page .card-header {
+  font-size: 12px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  margin-left: 6px;
+	margin: 0;
+     text-align: right;
+}
+
+.legend {
+	display: table;
+	width: auto;
+}
+.legend-point {
+	display: table-cell;
+	vertical-align: middle;
+}
+.legend-text {
+	display: inline-block;
+	margin-left: 4px;
+  font-size: 12px;
+  margin-right: 12px;
+}
+.legend-color {
+	display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 1px #000;
+}
+.red {
+	background-color: red;
+}
+.blue {
+	background-color: blue;
+}
+.black {
+	background-color: black;
+}
+
+.w-50 {
+	width: 50%;
+}
+
+.goals-body ul {
+
+}
+
+.goals-body ul > li {
+	padding-left: 20px;
+}
+
+.contact-icon {
+  height: 25px;
+  cursor: pointer;
+  margin-right: 0px;
+  border-right: 1px solid #e8e8e8;
+  padding-right: 5px;
+}
+.contact-page .card {
+	transition: background-color .2s linear, box-shadow .2s linear;
+}
+.contact-page .card:hover {
+	background-color: #F9F9F9;
+	box-shadow: 0 0 4px black;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
+
+* {
+	font-family: "Ubuntu Condensed";
+}
+
+.cv-page h1 {
+	margin-top: 8px;
+}
+
+.trans-fade {
+    opacity: 1;
+}
+
+.trans-fade.ng-enter,
+.trans-fade.ng-leave {
+    opacity: 1;
+    -webkit-transition : 1s linear all;
+    -moz-transition    : 1s linear all;
+    -ms-transition     : 1s linear all;
+    -o-transition      : 1s linear all;
+    transition         : 1s linear all;
+}
+
+.trans-fade.ng-enter {
+    opacity:0;
+}
+
+.trans-fade.ng-enter-active {
+    opacity: 1;
+}
+
+.trans-fade.ng-leave {
+    display: none;
+}
+
+.trans-fade.ng-leave-active {
+    display: none;
+}
+
+.cv-intersitial {
+	background-color: white;
+	color: black;
+	opacity: 1;
+	cursor: pointer;
+	transition: background-color 4s linear, opacity 4s linear;
+}
+
+table.language-option:hover {
+	background-color: #333333;
+	color: #Ffffff;
+}
+
+table.language-option.selected {
+
+}
+
+table.language-option td {
+	padding: 3px;
+}
+
+.laughing-face-icon {
+	width: 40px;
+}
+.laughing-message {
+	text-shadow: 0 0 1px #0F0;
+	font-size: 25px;
+}
+
+.laughing-face,
+.laughing-message {
+	opacity: 0;
+  -webkit-transition : opacity 2s linear;
+  -moz-transition    : opacity 2s linear;
+  -ms-transition     : opacity 2s linear;
+  -o-transition      : opacity 2s linear;
+  transition         : opacity 2s linear;
+  z-index: 999999;
+}
+
+.laughing-face.activated,
+.laughing-message.activated {
+	opacity: 1;
+  z-index: 999999;
+}
+
+.contact-page .card {
+	margin-top: 10px;
+}
+.slick-prev,
+.slick-next {
+	z-index:9999;
+}
+.slick-prev {
+	left: 0;
+}
+.slick-next {
+	right: 0;
+}
+
+slick {
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.slick-list {
+	border-radius: 4pt;
+}
+
+html,body {
+	
+}
+
+footer > div {
+	padding-top: 5px;
+}

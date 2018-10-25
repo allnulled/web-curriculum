@@ -1,0 +1,8 @@
+.nav-menu--inner--api {
+	width: 250px;
+	margin-left: -252px;
+	transition: margin-left 0.2s linear;
+}
+.nav-menu--inner--api.activated {
+	margin-left: 0px;
+}

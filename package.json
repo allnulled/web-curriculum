@@ -1,0 +1,30 @@
+{
+  "name": "web-curriculum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf node_modules",
+    "serve": "http-server . -p 9999",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.7.5",
+    "angular-animate": "^1.7.5",
+    "angular-route": "^1.7.5",
+    "angular-sanitize": "^1.7.5",
+    "angular-selectize2": "^1.2.3",
+    "angular-simple-nav-menu": "^1.0.0",
+    "angular-slick-carousel": "^3.1.7",
+    "angular-translate": "^2.18.1",
+    "bootstrap": "^4.1.3",
+    "dat.gui": "^0.7.3",
+    "jquery": "^3.3.1",
+    "selectize": "^0.12.6",
+    "slick-carousel": "^1.8.1",
+    "surge": "^0.20.1"
+  }
+}
